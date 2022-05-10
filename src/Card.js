@@ -1,4 +1,3 @@
-// Each card has an id, a question, possible answers, and a correct answer
 class Card {
   constructor(id, question, answers, correctAnswer) {
     this.id = id;
