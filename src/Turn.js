@@ -5,18 +5,15 @@ class Turn {
   }
 
   returnGuess = () => {
-    return userGuess;
+    return this.userGuess;
   };
 
   returnCard = () => {
-    return currentCard;
+    return this.currentCard;
   };
 
   evaluateGuess = () => {
-    const guessMatch = this.currentCard.correctAnswer.find(answer => {
-      return answer === this.userGuess;
-    });
-    return guessMatch;
+    return this.userGuess === this.currentCard.correctAnswer;
   };
 
   giveFeedback = () => {
