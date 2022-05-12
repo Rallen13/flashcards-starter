@@ -67,6 +67,11 @@ describe("Round", function() {
   it("should be able to start with zero incorrect guesses", function() {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
+
+  it("should be able to update turns count", function() {
+    const updatedTurns = round.takeTurn();
+    expect(round.turns).to.equal(1);
+  });
 });
 
 // Your Round class should meet the following requirements:
