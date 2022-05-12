@@ -3,6 +3,10 @@ class Round {
     this.deck = deck;
     this.currentCard = deck ? deck.cards[0] : "";
   }
+
+  returnCurrentCard = () => {
+    return this.currentCard;
+  };
 }
 
 module.exports = Round;
