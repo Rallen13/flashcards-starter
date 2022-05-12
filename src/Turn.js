@@ -17,11 +17,12 @@ class Turn {
   };
 
   giveFeedback = () => {
-    if (this.evaluateGuess()) {
-      return "correct!";
-    } else if (!this.evaluateGuess()) {
-      return "incorrect!";
-    }
+    // if (this.evaluateGuess()) {
+    //   return "correct!";
+    // } else {
+    //   return "incorrect!";
+    // }
+    return this.evaluateGuess() ? "correct!" : "incorrect!";
   };
 }
 
