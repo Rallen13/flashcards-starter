@@ -102,10 +102,15 @@ describe("Round", function() {
     round.takeTurn("sea otter");
     round.takeTurn("spleen");
     const percentCorrect = round.calculatePercentCorrect();
-    expect(percentCorrect).to.equal(33);
+    expect(percentCorrect).to.equal(67);
+  });
+
+  it("should be able to return a statement and percentage of correct guesses at the completion of a round", function() {
+    round.takeTurn("sea otter");
+    round.takeTurn("spleen");
+    const completeRound = round.endRound();
+    expect(completeRound).to.equal(
+      "** Round over! ** You answered 67% of the questions correctly!"
+    );
   });
 });
-
-// Your Round class should meet the following requirements:
-
-// - `endRound`: method that prints the following to the console: ‘** Round over! ** You answered <>% of the questions correctly!’

@@ -26,8 +26,12 @@ class Round {
 
   calculatePercentCorrect = () => {
     return Math.round(
-      (this.incorrectGuesses.length / this.deck.cards.length) * 100
+      100 - (this.incorrectGuesses.length / this.deck.cards.length) * 100
     );
+  };
+
+  endRound = () => {
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
   };
 }
 
