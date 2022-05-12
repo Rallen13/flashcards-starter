@@ -12,4 +12,9 @@ describe("Game", function() {
     const game = new Game();
     expect(Game).to.be.a("function");
   });
+
+  it("should be an instance of game", function() {
+    const game = new Game();
+    expect(game).to.be.an.instanceOf(Game);
+  });
 });
