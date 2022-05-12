@@ -58,4 +58,16 @@ describe("Game", function() {
     const cards = game.createCards();
     expect(cards[0]).to.be.an.instanceOf(Card);
   });
+
+  it("should be able to put Cards in a Deck", function() {
+    const newDeck = game.createDeck([card1, card2, card3]);
+    expect(newDeck).to.be.an.instanceOf(Deck);
+    expect(newDeck.cards[0]).to.be.an.instanceOf(Card);
+  });
+
+  it("should be able to create a new Round using the Deck", function() {
+    const newRound = game.createRound(deck);
+    expect(newRound).to.be.an.instanceOf(Round);
+    expect(newRound.deck).to.be.an.instanceOf(Deck);
+  });
 });

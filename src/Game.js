@@ -34,10 +34,18 @@ class Game {
     return cardCollection;
   };
 
+  createDeck = cards => {
+    return new Deck(cards);
+  };
+
+  createRound = deck => {
+    return new Round(deck);
+  };
+
   start = () => {
     const cards = this.createCards();
-    const deck = new Deck(cards);
-    const round = new Round(deck);
+    const deck = this.createDeck(cards);
+    const round = this.createRound(deck);
     this.currentRound = round;
     this.printMessage(deck, round);
     this.printQuestion(round);
