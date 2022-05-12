@@ -60,9 +60,8 @@ describe("Round", function() {
     expect(returnedCurrentCard).to.equal(card1);
   });
 
-  it("should be able to update turns count, evaluates guesses, gives feedback, and stores ids of incorrect guesses", function() {
-    var returnedCurrentCard = round.returnCurrentCard();
-    expect(returnedCurrentCard).to.equal(card1);
+  it("should be able to start with zero turns", function() {
+    expect(round.turns).to.equal(0);
   });
 });
 
