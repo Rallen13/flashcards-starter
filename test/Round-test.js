@@ -69,8 +69,18 @@ describe("Round", function() {
   });
 
   it("should be able to update turns count", function() {
-    const updatedTurns = round.takeTurn();
+    round.takeTurn();
     expect(round.turns).to.equal(1);
+  });
+
+  it("should be able to evaluate if guess is correct and receive feedback", function() {
+    const feedback = round.takeTurn("sea otter");
+    expect(feedback).to.equal("correct!");
+  });
+
+  it("should be able to evaluate if guess is incorrect and receive feedback", function() {
+    const feedback = round.takeTurn("spleen");
+    expect(feedback).to.equal("incorrect!");
   });
 });
 
