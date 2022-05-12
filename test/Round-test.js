@@ -94,12 +94,18 @@ describe("Round", function() {
   it("should be able to switch next card to current card", function() {
     round.takeTurn("sea otter");
     round.takeTurn("spleen");
-    expect(round.currentCard).to.deep.equal(card3);
+    const currentCard = round.returnCurrentCard();
+    expect(currentCard).to.deep.equal(card3);
+  });
+
+  it("should be able to calculate and return the percentage of correct guesses", function() {
+    round.takeTurn("sea otter");
+    round.takeTurn("spleen");
+    const percentCorrect = round.calculatePercentCorrect();
+    expect(percentCorrect).to.equal(33);
   });
 });
 
 // Your Round class should meet the following requirements:
-
-// - `calculatePercentCorrect`: method that calculates and returns the percentage of correct guesses
 
 // - `endRound`: method that prints the following to the console: ‘** Round over! ** You answered <>% of the questions correctly!’

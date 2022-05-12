@@ -23,6 +23,12 @@ class Round {
     );
     return currentTurn.giveFeedback();
   };
+
+  calculatePercentCorrect = () => {
+    return Math.round(
+      (this.incorrectGuesses.length / this.deck.cards.length) * 100
+    );
+  };
 }
 
 module.exports = Round;
