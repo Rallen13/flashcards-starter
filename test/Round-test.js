@@ -37,6 +37,7 @@ describe("Round", function() {
 
     round = new Round(deck);
   });
+
   it("should be a function", function() {
     const round = new Round();
     expect(Round).to.be.a("function");
