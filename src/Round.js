@@ -15,6 +15,12 @@ class Round {
   takeTurn = userGuess => {
     const currentTurn = new Turn(userGuess, this.currentCard);
     this.turns += 1;
+    if (!currentTurn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.currentCard.id);
+    }
+    this.currentCard = this.deck.cards.find(
+      (card, index) => index === this.turns
+    );
     return currentTurn.giveFeedback();
   };
 }
