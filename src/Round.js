@@ -15,13 +15,14 @@ class Round {
   takeTurn = userGuess => {
     const currentTurn = new Turn(userGuess, this.currentCard);
     this.turns += 1;
+    let message = currentTurn.giveFeedback();
     if (!currentTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
     }
     this.currentCard = this.deck.cards.find(
       (card, index) => index === this.turns
     );
-    return currentTurn.giveFeedback();
+    return message;
   };
 
   calculatePercentCorrect = () => {
@@ -31,6 +32,9 @@ class Round {
   };
 
   endRound = () => {
+    console.log(
+      `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+    );
     return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
   };
 }
