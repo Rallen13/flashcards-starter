@@ -4,7 +4,7 @@ const expect = chai.expect;
 const Game = require("../src/Game");
 const Round = require("../src/Round");
 const Card = require("../src/Card");
-// const Turn = require("../src/Turn");
+const Turn = require("../src/Turn");
 const Deck = require("../src/Deck");
 
 describe("Game", function() {
@@ -51,7 +51,11 @@ describe("Game", function() {
   });
 
   it("should be able to keep track of the current round", function() {
-    console.log(game.currentRound);
-    expect(game.currentRound).to.equal(round);
+    expect(game.currentRound).to.deep.equal({});
+  });
+
+  it("should be able to create cards", function() {
+    const cards = game.createCards();
+    expect(cards[0]).to.be.an.instanceOf(Card);
   });
 });
